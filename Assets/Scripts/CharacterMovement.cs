@@ -49,21 +49,25 @@ private float jumpForce = 10.0f;
             transform.localScale = new Vector2(1, 1);
         }
 
-        // Jump controls
+        // Jump controls including double jump
 
         if ((Input.GetButtonDown("Jump")) && jumpCounter < 1)
         {
             jump();
         }      
 
+        //resets double jump variable once player has landed on the ground
         if (bCollider.IsTouchingLayers(Ground))
         {
             resetJumpCounter();
         }
 
+        
 
 
     }
+
+    //puts an upward force (a jump) on the player if they can jump.
     void jump()
     {
         myAnimator.SetTrigger("Jump");
@@ -75,5 +79,7 @@ private float jumpForce = 10.0f;
     {
         jumpCounter = 0;
     }
+
+    
 
 }
