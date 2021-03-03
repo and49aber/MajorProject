@@ -6,7 +6,7 @@ public class DialogueHolder : MonoBehaviour
 {
     public string dialogue;
     private DialogueManager diaManager;
-
+    
 
 
     // Start is called before the first frame update

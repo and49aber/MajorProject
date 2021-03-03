@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox;
     public Text dialogueText;
     public bool dialogOnScreen;
+    public static bool isTalking;
 
 
     // Start is called before the first frame update
@@ -22,8 +23,7 @@ public class DialogueManager : MonoBehaviour
     {
         // closes dialog box when C is pressed
         if(dialogOnScreen && Input.GetKeyDown(KeyCode.C)){
-            dialogueBox.SetActive(false);
-            dialogOnScreen = false;
+            CloseDialogue();
         }
     }
 
@@ -33,6 +33,14 @@ public class DialogueManager : MonoBehaviour
         dialogOnScreen = true;
         dialogueBox.SetActive(true);
         dialogueText.text = dialogue;
+        isTalking = true;
+        
+}
+    public void CloseDialogue()
+    {
+        dialogueBox.SetActive(false);
+        dialogOnScreen = false;
+        isTalking = false;
     }
 
 }

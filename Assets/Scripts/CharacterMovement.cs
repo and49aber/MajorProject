@@ -32,36 +32,39 @@ private float jumpForce = 10.0f;
     // Update is called once per frame
     void Update()
     {
-        float move = Input.GetAxis("Horizontal");        
-
-        // Move the character by finding the target velocity
-        Vector3 targetVelocity = new Vector2(move * MoveForce, rb.velocity.y);
-
-        // And then smoothing it out and applying it to the character
-        rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref currentVelocity,
-        MovementSmoothing);
-
-        // This will flip the character to face left when walking left and right when turning right. 
-        if (move < 0) {
-            transform.localScale = new Vector2(-1, 1);
-        } else
+        float move = Input.GetAxis("Horizontal");
+        if (DialogueManager.isTalking == false)
         {
-            transform.localScale = new Vector2(1, 1);
+            // Move the character by finding the target velocity
+            Vector3 targetVelocity = new Vector2(move * MoveForce, rb.velocity.y);
+
+            // And then smoothing it out and applying it to the character
+            rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref currentVelocity,
+            MovementSmoothing);
+
+            // This will flip the character to face left when walking left and right when turning right. 
+            if (move < 0)
+            {
+                transform.localScale = new Vector2(-1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector2(1, 1);
+            }
+
+            // Jump controls including double jump
+
+            if ((Input.GetButtonDown("Jump")) && jumpCounter < 1)
+            {
+                jump();
+            }
+
+            //resets double jump variable once player has landed on the ground
+            if (bCollider.IsTouchingLayers(Ground))
+            {
+                resetJumpCounter();
+            }
         }
-
-        // Jump controls including double jump
-
-        if ((Input.GetButtonDown("Jump")) && jumpCounter < 1)
-        {
-            jump();
-        }      
-
-        //resets double jump variable once player has landed on the ground
-        if (bCollider.IsTouchingLayers(Ground))
-        {
-            resetJumpCounter();
-        }
-
         
 
 
