@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// [write description of class]
 public class DialogueHolder : MonoBehaviour
 {
-    public string dialogue;
+    [SerializeField] private string dialogueStart;
     private DialogueManager diaManager;
     
 
@@ -29,7 +31,7 @@ public class DialogueHolder : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                diaManager.ShowDialogue(dialogue);
+                diaManager.ShowDialogue(dialogueStart);
             }
         }
     }

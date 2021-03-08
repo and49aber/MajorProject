@@ -36,6 +36,8 @@ public class DialogueManager : MonoBehaviour
         isTalking = true;
         
 }
+
+    // Closes the dialogue box
     public void CloseDialogue()
     {
         dialogueBox.SetActive(false);

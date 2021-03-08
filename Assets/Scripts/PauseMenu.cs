@@ -16,6 +16,8 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // The player can press the escape key to pause the game when it is not already paused.
+        // Otherwise it will unpause.
         if (Input.GetKeyDown(KeyCode.Escape) && menuIsActive == false){
             pMenu.SetActive(true);
             menuIsActive = true;

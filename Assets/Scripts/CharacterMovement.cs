@@ -14,6 +14,7 @@ private BoxCollider2D bCollider;
 private Vector3 currentVelocity = Vector3.zero;
 private int jumpCounter = 0;
 private float jumpForce = 10.0f;
+private bool doubleJumped = false;
 
 
 
@@ -54,10 +55,17 @@ private float jumpForce = 10.0f;
 
             // Jump controls including double jump
 
-            if ((Input.GetButtonDown("Jump")) && jumpCounter < 1)
+            if ((Input.GetButtonDown("Jump")) && (bCollider.IsTouchingLayers(Ground) && (DialogueManager.isTalking == false)))
             {
                 jump();
             }
+
+            if ((Input.GetButtonDown("Jump")) && (jumpCounter < 1 && TimeValueMiniGame.canDoubleJump) && (DialogueManager.isTalking == false) && (doubleJumped == false))
+            {
+                jump();
+                doubleJumped = true;
+            }
+
 
             //resets double jump variable once player has landed on the ground
             if (bCollider.IsTouchingLayers(Ground))
@@ -77,10 +85,12 @@ private float jumpForce = 10.0f;
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         jumpCounter++;
     }
-
+    // When player lands on ground, jumpCounter will need to be reset so the player can 
+    // double jump again.
     void resetJumpCounter()
     {
         jumpCounter = 0;
+        doubleJumped = false;
     }
 
     
