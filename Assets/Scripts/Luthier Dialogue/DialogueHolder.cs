@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// [write description of class]
+
 public class DialogueHolder : MonoBehaviour
 {
     [SerializeField] private string dialogueStart;

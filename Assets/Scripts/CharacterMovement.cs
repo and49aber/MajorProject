@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
 [Range(0, .3f)] public float MovementSmoothing = .05f ; // How much to smooth out the movement
-public float JumpForce = 400f ; // Amount of force added when the player jumps .
+//public float JumpForce = 400f ; // Amount of force added when the player jumps .
 public float MoveForce = 10f ; // Amount of force added when the player jumps .
 public LayerMask Ground;// A mask determining what is ground to the character
 private Rigidbody2D rb;
