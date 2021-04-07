@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
         Vector3 targetPosition = followPoint.position + offset;
 
         /** We lerp from our target position, to the new position with smoothing. 
-         * We use fixedDeltaTime here to make the rate the same on every machine, reguardless of the fps. **/
+         * We use fixedDeltaTime here to make the rate the same on every machine, regardless of the fps. **/
         Vector3 positionSmoothing = Vector3.Lerp(transform.position, targetPosition, smoothingRate*Time.fixedDeltaTime);
 
         transform.position = positionSmoothing;

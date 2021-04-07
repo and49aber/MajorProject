@@ -11,13 +11,6 @@ public class DialogueManager : MonoBehaviour
     public bool dialogOnScreen;
     public static bool isTalking;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

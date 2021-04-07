@@ -37,10 +37,7 @@ public class TimeValueMiniGame : StartMinigame
     void Update()
     {
         textBoxAnswers.text = correctQuestions.ToString();  
-        if(correctQuestions == 5)
-        {
-           
-        }
+       
     }
     //This will check the answer of the player against the correct answer. If correct, a new question is presented and their score is increased
     public void confirmAnswer()
