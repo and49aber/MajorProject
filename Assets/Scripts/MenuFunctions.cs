@@ -7,12 +7,14 @@ public class MenuFunctions : MonoBehaviour
     [SerializeField] private GameObject tutorialCan;
     [SerializeField] private GameObject welcomeCan;
     [SerializeField] private GameObject timeValueCan;
+    [SerializeField] private GameObject notationCan;
 
     public void tutorialCanvas()
     {
         tutorialCan.SetActive(true);
         welcomeCan.SetActive(false);
         timeValueCan.SetActive(false);
+        notationCan.SetActive(false);
     }
 
     public void returnToWelcomeMenu()
@@ -24,6 +26,11 @@ public class MenuFunctions : MonoBehaviour
     public void timeValueCanvas()
     {
         timeValueCan.SetActive(true);
+        tutorialCan.SetActive(false);
+    }
+    public void notationCanvas()
+    {
+        notationCan.SetActive(true);
         tutorialCan.SetActive(false);
     }
 

@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private GameObject pMenu;
     
-    private bool menuIsActive;
+    public bool menuIsActive;
 
     // Start is called before the first frame update
     void Start()

@@ -36,6 +36,17 @@ private bool doubleJumped = false;
         float move = Input.GetAxis("Horizontal");
         if (DialogueManager.isTalking == false)
         {
+            if (Input.GetKeyDown(KeyCode.V) && NotationMiniGame.canAllegro)
+            {
+                MoveForce = 15f;
+            } else if (Input.GetKeyUp(KeyCode.V))
+            {
+                MoveForce = 10f;
+            }
+            
+
+            
+
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * MoveForce, rb.velocity.y);
 

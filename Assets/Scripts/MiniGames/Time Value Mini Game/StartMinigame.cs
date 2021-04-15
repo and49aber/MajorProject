@@ -5,18 +5,18 @@ using UnityEngine;
 public class StartMinigame : MonoBehaviour
 {
 
-    [SerializeField] private GameObject tValueGame;
+    [SerializeField] private GameObject miniGame;
 
 
     //starts the minigame
-    public void StartTimeValueGame()
+    public void StartMiniGame()
     {
-        tValueGame.SetActive(true);
+        miniGame.SetActive(true);
     }
 
     //ends the minigame
-    public void EndTimeValueGame()
+    public void EndMiniGame()
     {
-        tValueGame.SetActive(false);
+        miniGame.SetActive(false);
     }
 }

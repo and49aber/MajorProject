@@ -51,7 +51,7 @@ public class TimeValueMiniGame : StartMinigame
             GameObject.Find("InputField").GetComponent<TMP_InputField>().text = "";
             if(correctQuestions == 5)
             {
-                EndTimeValueGame();
+                EndMiniGame();
                 diaManager.ShowDialogue(dialogueCorrect);
                 startChallengeButton.gameObject.SetActive(false);
                 endChallengeButton.gameObject.SetActive(false);
@@ -61,7 +61,7 @@ public class TimeValueMiniGame : StartMinigame
         } else 
         {
             GameObject.Find("InputField").GetComponent<TMP_InputField>().text = "";
-            EndTimeValueGame();
+            EndMiniGame();
             correctQuestions = 0;
             ResetQuestion();
             CreateTvalueGame();
