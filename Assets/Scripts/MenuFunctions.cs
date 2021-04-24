@@ -19,6 +19,7 @@ public class MenuFunctions : MonoBehaviour
         notationCan.SetActive(false);
         musicalTermsCan.SetActive(false);
         aimOfGameCan.SetActive(false);
+       
     }
 
     public void returnToWelcomeMenu()

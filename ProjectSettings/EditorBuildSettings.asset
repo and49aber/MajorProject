@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 2 (Luthier).unity
     guid: c5ac4d86ea35a414182888e4f7d902f3
+  - enabled: 1
+    path: Assets/Scenes/Level 3 (learning).unity
+    guid: d369463f3ced3b045a267a28b61963bd
+  - enabled: 1
+    path: Assets/Scenes/Level 3 (Luthier).unity
+    guid: 8c92c21dc555ce344930b037fbb03f27
+  - enabled: 1
+    path: Assets/Scenes/End Game.unity
+    guid: ffa02ff084f332741abe498e0d2bbc7d
   m_configObjects: {}
