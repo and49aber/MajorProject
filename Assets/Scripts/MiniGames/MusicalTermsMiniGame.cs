@@ -40,13 +40,13 @@ public class MusicalTermsMiniGame : StartMinigame
 
     }
     // This creates our minigame choosing a correct answer from 9 possibilites.
-    //
+    // A random number is chosen to select the correct answer. 
     void createMusicalTermsGame()
     {
         int rand = Random.Range(0, 9);
         answerButton1Text.text = possibleAnswers.GetValue(rand).ToString();
         int rand2 = Random.Range(0, 9);
-        do
+        do // these "do" statements ensure that the random numbers cannot be the same as previously selected numbers.
         {
             rand2 = Random.Range(0, 9);
         } 
@@ -125,6 +125,7 @@ public class MusicalTermsMiniGame : StartMinigame
             int CorrectButton = Random.Range(1, 5);
             switch (CorrectButton)
             {
+            
                 case 1:
                     if (answerButton1Text.text != correctAnswer && answerButton2Text.text != correctAnswer && answerButton3Text.text != correctAnswer && answerButton4Text.text != correctAnswer)
                     {
@@ -159,6 +160,8 @@ public class MusicalTermsMiniGame : StartMinigame
     
     public void SelectAnswer1()
     {
+        // This function is used on each button. If the player chooses the correct answer then the score is incremented
+        // and if the correct answers reaches 5/5 then the minigame will end and the player will be able to finish the game.
         if(answerButton1Text.text == correctAnswer)
         {
             correctQuestions++;
@@ -174,6 +177,7 @@ public class MusicalTermsMiniGame : StartMinigame
             }
 
         } else
+        // if the player gets the wrong answer then they are taken out of the minigame and given appropriate dialogue.
         {
             EndMiniGame();
             correctQuestions = 0;
