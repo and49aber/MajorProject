@@ -7,7 +7,7 @@ Please select Assetts -> Scripts to view all C# scripting done for the project.
 
 
 Playing game through Unity:
-Please go to Unity.com and follow their instructions for download. Choose personal for which version to download and download Unity Hub also. 
+Please go to Unity.com and follow their instructions for download. The version used in this project is 2019.4.18f1 Choose personal for which version to download and download Unity Hub also. 
 (this may be included with personal download)
 
 Download and unzip the project from github. Open Unity Hub, click "Add" in top right and locate the unzipped folder for the project. 
